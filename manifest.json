@@ -1,0 +1,20 @@
+{
+  "manifestType": "minecraftModpack",
+  "manifestVersion": 1,
+  "name": "jmendes-all-in-one",
+  "version": "0.1.0",
+  "author": "QuackPT",
+  "minecraft": {
+    "version": "1.21.1",
+    "modLoaders": [
+      {
+        "id": "forge-1.21.1",
+        "primary": true
+      }
+    ]
+  },
+  "files": [
+    { "projectID": 0, "fileID": 0 }
+  ],
+  "overrides": "overrides"
+}

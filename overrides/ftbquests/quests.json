@@ -1,0 +1,63 @@
+{
+  "title": "JMendes All-In-One - ATM-style quest import (sample)",
+  "author": "QuackPT",
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "atm_root",
+      "name": "ATM Core",
+      "icon": "minecraft:chest",
+      "quests": [
+        {
+          "id": "start",
+          "name": "Welcome to the Pack",
+          "description": "Get started with the basics and the pack rules.",
+          "icon": "minecraft:book",
+          "tasks": [
+            { "type": "obtain_item", "item": "minecraft:crafting_table", "count": 1 }
+          ],
+          "rewards": [
+            { "type": "item", "item": "minecraft:iron_ingot", "count": 4 }
+          ]
+        },
+        {
+          "id": "power",
+          "name": "Power Basics",
+          "description": "Generate your first RF / Forge Energy.",
+          "icon": "minecraft:redstone",
+          "tasks": [
+            { "type": "trigger_block", "block": "minecraft:furnace" }
+          ],
+          "rewards": [
+            { "type": "xp", "amount": 100 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atm_machines",
+      "name": "Machines & Automation",
+      "icon": "minecraft:hopper",
+      "quests": [
+        {
+          "id": "auto_farm",
+          "name": "Automate Farming",
+          "description": "Set up a simple automated crop farm.",
+          "icon": "minecraft:wheat",
+          "tasks": [
+            { "type": "create_multiblock", "multiblock": "farm_core" }
+          ],
+          "rewards": [
+            { "type": "item", "item": "minecraft:gold_ingot", "count": 2 }
+          ]
+        }
+      ]
+    }
+  ],
+  "layout": {
+    "rows": 6,
+    "columns": 9,
+    "style": "atm"
+  },
+  "notes": "This file is a full FTB Quests import skeleton with ATM-style category layout and icons. Replace sample quests with your final content before publishing."
+}

@@ -1,0 +1,23 @@
+{
+  "lootBags": [
+    {
+      "id": "starter_bag",
+      "name": "Starter Loot Bag",
+      "icon": "minecraft:bag",
+      "drops": [
+        { "item": "minecraft:iron_ingot", "min": 1, "max": 3, "weight": 50 },
+        { "item": "minecraft:apple", "min": 1, "max": 2, "weight": 30 },
+        { "item": "minecraft:bread", "min": 1, "max": 1, "weight": 20 }
+      ]
+    },
+    {
+      "id": "rare_bag",
+      "name": "Rare Loot Bag",
+      "icon": "minecraft:golden_apple",
+      "drops": [
+        { "item": "minecraft:gold_ingot", "min": 1, "max": 2, "weight": 40 },
+        { "item": "minecraft:diamond", "min": 1, "max": 1, "weight": 10 }
+      ]
+    }
+  ]
+}

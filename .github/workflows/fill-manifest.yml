@@ -1,0 +1,39 @@
+name: Fill CurseForge manifest
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Run fetch_ids.py (non-interactive)
+        env:
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+        run: |
+          python3 fetch_ids.py --modlist modlist.json --manifest manifest.json --output manifest.filled.json --non-interactive
+
+      - name: Create Pull Request with filled manifest
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Add manifest.filled.json (CurseForge project/file IDs)"
+          branch: "fill-manifest-${{ github.run_id }}"
+          title: "Fill manifest with CurseForge IDs"
+          body: |
+            This PR adds `manifest.filled.json` with CurseForge projectID/fileID entries
+            generated automatically. Please review files and merge when ready.
+          labels: auto-generated, manifest
